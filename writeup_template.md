@@ -6,7 +6,7 @@
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
+* Reflect on my work in a written report
 
 ### Reflection
 
@@ -24,12 +24,12 @@ My lane detection pipeline was build as follows:
 The step 8 required changes in the draw_lines function. I added detection of the slope for every line which was found in the step 7, so I could separate lines between right and left lane.
 Then I used approximation with np.polyfit to identify first degree polynomial which represents a lane. By solving it with minimum "y" coordinate which was exctracted from all of the detected lines, I was able to get two lines which roughtly represent lanes on the road. 
 
-### 2. Potential shortcomings with your current pipeline
+### 2. Potential shortcomings with the current pipeline
 
 The provided solution works for well for videos with straight lanes but in the "challenge" video there are problems with lane detection due to curved lanes in the top of the region of intrest. This happens due to my approach to the classification of hough lines by their slope, so in order to improve the pipeline I'll have to find a way to detect change in the slope of the lane.
 
 It's also worth noting that test videos are recorded in the daylight and from straight point of view. If these conditions will not hold, my approach to find a region of intrest will fail to provide the correct region.
 
-### 3. Suggest possible improvements to your pipeline
+### 3. Possible improvements to the pipeline
 
 There is also a room for improvement to the approximation of lane lines. They should be approximated not just by regular line, but for some higher degree polynomial. I actually tried that, but could not supress the noise completely in the corners of the region of intrest, so I did not include this code to the review.
